@@ -4,6 +4,7 @@ First try for random inputs
 Then from maestros
 """
 print("imports..")
+print('Arthur kan skriva kod!!')
 import sys
 import fire
 import warnings
