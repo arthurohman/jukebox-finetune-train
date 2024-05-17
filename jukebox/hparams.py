@@ -484,7 +484,7 @@ DEFAULTS["prime_attn_block"] = Hyperparams(
 )
 
 DEFAULTS["opt"] = Hyperparams(
-    epochs=100,    # 10000
+    epochs=10,    # 10000
     lr=0.0003,
     clip=1.0,
     beta1=0.9,
