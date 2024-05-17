@@ -237,7 +237,7 @@ small_single_enc_dec_prior = Hyperparams(
     prior_depth=48,
     heads=2,
     attn_order=12,
-    blocks=64,
+    blocks=8,
     init_scale=0.7,
     c_res=1,
     prime_loss_fraction=0.4,
@@ -250,7 +250,7 @@ small_single_enc_dec_prior = Hyperparams(
     max_duration=30.0,    # 600
     t_bins=16,      # original: 64
     use_tokens=True,
-    n_tokens=64,    # original: 384
+    n_tokens=48,    # original: 384
     n_vocab=79,
 )
 HPARAMS_REGISTRY["small_single_enc_dec_prior"] = small_single_enc_dec_prior
