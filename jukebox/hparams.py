@@ -232,7 +232,7 @@ small_labelled_prior.update(small_prior)
 HPARAMS_REGISTRY["small_labelled_prior"] = small_labelled_prior
 
 small_single_enc_dec_prior = Hyperparams(
-    n_ctx=512,    # original: 6144
+    n_ctx=768,    # original: 6144
     prior_width=1024,
     prior_depth=48,
     heads=2,
@@ -250,7 +250,7 @@ small_single_enc_dec_prior = Hyperparams(
     max_duration=30.0,    # 600
     t_bins=16,      # original: 64
     use_tokens=True,
-    n_tokens=32,    # original: 384
+    n_tokens=48,    # original: 384
     n_vocab=79,
 )
 HPARAMS_REGISTRY["small_single_enc_dec_prior"] = small_single_enc_dec_prior
