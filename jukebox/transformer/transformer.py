@@ -100,6 +100,8 @@ class Transformer(nn.Module):
         self.encoder_dims = encoder_dims
         self.blocks = blocks
         if blocks is not None:
+            print('n_ctx: ', n_ctx)
+            print('blocks: ', blocks)
             assert n_ctx % blocks == 0
             self.block_ctx = n_ctx // blocks
         self.prime_len = prime_len
