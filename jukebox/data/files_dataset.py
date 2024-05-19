@@ -69,9 +69,6 @@ class FilesAudioDataset(Dataset):
         return index, offset
 
     def get_metadata(self, filename, test):
-        """
-        Self-implemented pre-processing of LibriSpeech dataset (in .gz).
-        """
         #lyric_path = filename.split(".wav")[0] + ".txt"
         lyric_path = filename.split(".wav")[0] + ".gz"
 
