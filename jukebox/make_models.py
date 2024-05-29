@@ -25,6 +25,7 @@ def load_checkpoint(path):
     print("PATH: ", path)
     restore = path
     if restore.startswith(REMOTE_PREFIX):
+        print("RESTORE!!! AZURE!!!")
         remote_path = restore
         local_path = os.path.join(os.path.expanduser("~/.cache"), remote_path[len(REMOTE_PREFIX):])
         if dist.get_rank() % 8 == 0:
@@ -35,7 +36,8 @@ def load_checkpoint(path):
                 download(remote_path, local_path)
         restore = local_path
     dist.barrier()
-    checkpoint = t.load(restore, map_location=t.device('cpu'))
+    #checkpoint = t.load(restore, map_location=t.device('cpu'))
+    checkpoint = t.load(restore)
     print("Restored from {}".format(restore))
     import gc
     gc.collect()
@@ -55,6 +57,7 @@ def save_checkpoint(logger, name, model, opt, metrics, hps):
 def restore_model(hps, model, checkpoint_path):
     model.step = 0
     if checkpoint_path != '':
+        print("CHECKPOINT: ", checkpoint_path)
         checkpoint = load_checkpoint(checkpoint_path)
         # checkpoint_hps = Hyperparams(**checkpoint['hps'])
         # for k in set(checkpoint_hps.keys()).union(set(hps.keys())):
