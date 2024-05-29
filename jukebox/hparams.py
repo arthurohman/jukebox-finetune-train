@@ -34,18 +34,6 @@ easy = Hyperparams(
 
 HPARAMS_REGISTRY["easy"] = easy
 
-my_retrained_prior = Hyperparams(restore_prior='/content/drive/MyDrive/Project Jukebox/Saved Models/checkpoint_latest4.pth.tar',
-    level=1,
-    labels=True,
-    # TODO For the two lines below, if `--labels` was used and the model is
-    # trained with lyrics, find and enter the layer, head pair that has learned
-    # alignment.
-    alignment_layer=47,
-    alignment_head=0,)
-
-my_retrained_prior.update(small_enc_dec_prior)
-HPARAMS_REGISTRY["my_retrained_prior"] = my_retrained_prior
-
 REMOTE_PREFIX = 'https://openaipublic.azureedge.net/'
 
 # Model hps
@@ -580,3 +568,15 @@ DEFAULTS["audio"] = Hyperparams(
 DEFAULTS["distributed"] = Hyperparams(
     bucket=128
 )
+
+my_retrained_prior = Hyperparams(restore_prior='/content/drive/MyDrive/Project Jukebox/Saved Models/checkpoint_latest4.pth.tar',
+    level=1,
+    labels=True,
+    # TODO For the two lines below, if `--labels` was used and the model is
+    # trained with lyrics, find and enter the layer, head pair that has learned
+    # alignment.
+    alignment_layer=47,
+    alignment_head=0,)
+
+my_retrained_prior.update(small_enc_dec_prior)
+HPARAMS_REGISTRY["my_retrained_prior"] = my_retrained_prior
