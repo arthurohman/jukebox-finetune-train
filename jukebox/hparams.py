@@ -31,6 +31,16 @@ HPARAMS_REGISTRY["teeny"] = teeny
 easy = Hyperparams(
     sr=22050,
 )
+
+my_retrained_prior = Hyperparams(restore_prior='/content/drive/MyDrive/Project Jukebox/Saved Models/checkpoint_latest4.pth.tar',
+    level=1,
+    labels=True,
+    # TODO For the two lines below, if `--labels` was used and the model is
+    # trained with lyrics, find and enter the layer, head pair that has learned
+    # alignment.
+    alignment_layer=47,
+    alignment_head=0,)
+
 HPARAMS_REGISTRY["easy"] = easy
 
 REMOTE_PREFIX = 'https://openaipublic.azureedge.net/'
