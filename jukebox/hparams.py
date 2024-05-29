@@ -32,6 +32,8 @@ easy = Hyperparams(
     sr=22050,
 )
 
+HPARAMS_REGISTRY["easy"] = easy
+
 my_retrained_prior = Hyperparams(restore_prior='/content/drive/MyDrive/Project Jukebox/Saved Models/checkpoint_latest4.pth.tar',
     level=1,
     labels=True,
@@ -41,7 +43,8 @@ my_retrained_prior = Hyperparams(restore_prior='/content/drive/MyDrive/Project J
     alignment_layer=47,
     alignment_head=0,)
 
-HPARAMS_REGISTRY["easy"] = easy
+my_retrained_prior.update(small_enc_dec_prior)
+HPARAMS_REGISTRY["my_retrained_prior"] = my_retrained_prior
 
 REMOTE_PREFIX = 'https://openaipublic.azureedge.net/'
 
@@ -262,6 +265,8 @@ small_single_enc_dec_prior = Hyperparams(
     use_tokens=True,
     n_tokens=24,    # original: 384
     n_vocab=79,
+    alignment_layer=47,
+    alignment_head=0
 )
 HPARAMS_REGISTRY["small_single_enc_dec_prior"] = small_single_enc_dec_prior
 
