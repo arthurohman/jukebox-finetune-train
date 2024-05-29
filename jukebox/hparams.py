@@ -570,7 +570,7 @@ DEFAULTS["distributed"] = Hyperparams(
 )
 
 my_retrained_prior = Hyperparams(restore_prior='/content/drive/MyDrive/Project Jukebox/Saved Models/checkpoint_latest3.pth.tar',
-    level=1,
+    level=2,
     labels=True,
     # TODO For the two lines below, if `--labels` was used and the model is
     # trained with lyrics, find and enter the layer, head pair that has learned
