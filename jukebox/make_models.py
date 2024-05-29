@@ -50,7 +50,7 @@ def save_checkpoint(logger, name, model, opt, metrics, hps):
                 'model': model.state_dict(), # should also save bottleneck k's as buffers
                 'opt': opt.state_dict() if opt is not None else None,
                 'step': logger.iters,
-                **metrics}, f'{logger.logdir}/checkpoint_{name}.pth.tar')
+                **metrics}, f'{logger.logdir}/checkpoint_{name}_{logger.iters}.pth.tar')
     return
 
 def restore_model(hps, model, checkpoint_path):
