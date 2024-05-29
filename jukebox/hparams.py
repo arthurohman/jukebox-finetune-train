@@ -569,7 +569,7 @@ DEFAULTS["distributed"] = Hyperparams(
     bucket=128
 )
 
-my_retrained_prior = Hyperparams(restore_prior='/content/drive/MyDrive/Project Jukebox/Saved Models/checkpoint_latest2.pth.tar',
+my_retrained_prior = Hyperparams(restore_prior='/content/drive/MyDrive/"Project Jukebox"/"Saved Models"/checkpoint_latest2.pth.tar',
     level=1,
     labels=True,
     # TODO For the two lines below, if `--labels` was used and the model is
