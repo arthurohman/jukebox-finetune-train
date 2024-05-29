@@ -22,6 +22,7 @@ MODELS = {
 }
 
 def load_checkpoint(path):
+    print("PATH: ", path)
     restore = path
     if restore.startswith(REMOTE_PREFIX):
         remote_path = restore
