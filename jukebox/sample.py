@@ -177,7 +177,7 @@ def load_codes(codes_file, duration, priors, hps):
 # Generate and save samples, alignment, and webpage for visualization.
 def save_samples(model, device, hps, sample_hps):
     print(hps)
-    from jukebox.lyricdict import poems, gpt_2_lyrics
+    #from jukebox.lyricdict import poems, gpt_2_lyrics
     vqvae, priors = make_model(model, device, hps)
 
     assert hps.sample_length//priors[-2].raw_to_tokens >= priors[-2].n_ctx, f"Upsampling needs atleast one ctx in get_z_conds. Please choose a longer sample length"
