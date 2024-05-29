@@ -101,6 +101,7 @@ class SimplePrior(nn.Module):
                                                      **prior_kwargs)
 
         else:
+            print("WE'RE HERE!!!")
             # Separate encoder-decoder transformer
             if self.n_tokens != 0 and self.use_tokens:
                 from jukebox.transformer.ops import Conv1D
