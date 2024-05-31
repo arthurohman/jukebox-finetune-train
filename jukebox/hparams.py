@@ -253,10 +253,10 @@ small_single_enc_dec_prior = Hyperparams(
     use_tokens=True,
     n_tokens=384,    # original: 384, ours: 24
     n_vocab=79,
-    restore_prior='/content/drive/MyDrive/PLUGG/DT2119 Speaker Recognition/Project Jukebox/checkpoint_latest_1.pth.tar',
-    level=2,
-    alignment_layer=47,
-    alignment_head=0
+    #restore_prior='/content/drive/MyDrive/PLUGG/DT2119 Speaker Recognition/Project Jukebox/checkpoint_latest_1.pth.tar',
+    #level=2,
+    #alignment_layer=47,
+    #alignment_head=0
 )
 HPARAMS_REGISTRY["small_single_enc_dec_prior"] = small_single_enc_dec_prior
 
@@ -571,14 +571,34 @@ DEFAULTS["distributed"] = Hyperparams(
     bucket=128
 )
 
-my_retrained_prior = Hyperparams(restore_prior='/content/drive/MyDrive/PLUGG/DT2119 Speaker Recognition/Project Jukebox/Saved Models/checkpoint_latest_6501.pth.tar',
-    level=2,
+my_retrained_prior = Hyperparams(
+    n_ctx=6144,    # original: 6144, ours: 384
+    prior_width=1024,
+    prior_depth=48,
+    heads=2,
+    attn_order=12,
+    blocks=64,
+    init_scale=0.7,
+    c_res=1,
+    prime_loss_fraction=0.4,
+    single_enc_dec=True,
     labels=True,
+    labels_v3=True,
+    y_bins=(10,100), # Set this to (genres, artists) for your dataset
+    max_bow_genre_size=1,
+    min_duration=24.0,    # 24
+    max_duration=600.0,    # 600
+    t_bins=64,      # original: 64, ours: 16
+    use_tokens=True,
+    n_tokens=384,    # original: 384, ours: 24
+    n_vocab=79,
+    restore_prior='/content/drive/MyDrive/PLUGG/DT2119 Speaker Recognition/Project Jukebox/Saved Models/checkpoint_latest_6501.pth.tar',
+    level=2,
     # TODO For the two lines below, if `--labels` was used and the model is
     # trained with lyrics, find and enter the layer, head pair that has learned
     # alignment.
     alignment_layer=47,
     alignment_head=0,)
 
-my_retrained_prior.update(small_single_enc_dec_prior)
+#my_retrained_prior.update(small_single_enc_dec_prior)
 HPARAMS_REGISTRY["my_retrained_prior"] = my_retrained_prior
