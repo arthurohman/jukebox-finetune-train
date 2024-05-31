@@ -252,7 +252,11 @@ small_single_enc_dec_prior = Hyperparams(
     t_bins=64,      # original: 64, ours: 16
     use_tokens=True,
     n_tokens=384,    # original: 384, ours: 24
-    n_vocab=79
+    n_vocab=79,
+    restore_prior='/content/drive/MyDrive/PLUGG/DT2119 Speaker Recognition/Project Jukebox/checkpoint_latest_1.pth.tar',
+    level=2,
+    alignment_layer=47,
+    alignment_head=0
 )
 HPARAMS_REGISTRY["small_single_enc_dec_prior"] = small_single_enc_dec_prior
 
@@ -576,5 +580,5 @@ my_retrained_prior = Hyperparams(restore_prior='/content/drive/MyDrive/PLUGG/DT2
     alignment_layer=47,
     alignment_head=0,)
 
-my_retrained_prior.update(small_prior)
+my_retrained_prior.update(small_single_enc_dec_prior)
 HPARAMS_REGISTRY["my_retrained_prior"] = my_retrained_prior
