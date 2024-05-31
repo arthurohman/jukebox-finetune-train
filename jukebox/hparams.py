@@ -592,7 +592,7 @@ my_retrained_prior = Hyperparams(
     use_tokens=True,
     n_tokens=384,    # original: 384, ours: 24
     n_vocab=79,
-    restore_prior='/content/drive/MyDrive/PLUGG/DT2119 Speaker Recognition/Project Jukebox/Saved Models/checkpoint_latest_6501.pth.tar',
+    restore_prior='/content/drive/MyDrive/PLUGG/DT2119 Speaker Recognition/Project Jukebox/checkpoint_latest_1.pth.tar',
     level=2,
     # TODO For the two lines below, if `--labels` was used and the model is
     # trained with lyrics, find and enter the layer, head pair that has learned
