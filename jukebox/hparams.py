@@ -238,7 +238,7 @@ small_single_enc_dec_prior = Hyperparams(
     prior_depth=48,
     heads=2,
     attn_order=12,
-    blocks=24,
+    blocks=64,
     init_scale=0.7,
     c_res=1,
     prime_loss_fraction=0.4,
@@ -252,11 +252,7 @@ small_single_enc_dec_prior = Hyperparams(
     t_bins=64,      # original: 64, ours: 16
     use_tokens=True,
     n_tokens=384,    # original: 384, ours: 24
-    n_vocab=79,
-    alignment_layer=47,
-    alignment_head=0,
-    restore_prior='/content/drive/MyDrive/PLUGG/DT2119 Speaker Recognition/Project Jukebox/Saved Models/checkpoint_latest_6501.pth.tar',
-    levels=2
+    n_vocab=79
 )
 HPARAMS_REGISTRY["small_single_enc_dec_prior"] = small_single_enc_dec_prior
 
