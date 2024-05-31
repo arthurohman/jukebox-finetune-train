@@ -178,7 +178,7 @@ def make_prior(hps, vqvae, device='cuda'):
 
     prior.alignment_head = hps.get('alignment_head', None)
     prior.alignment_layer = hps.get('alignment_layer', None)
-    print("PRIOR FIRST: ", prior)
+    print("PRIOR FIRST: ", prior.__dict__)
     if hps.fp16_params:
         print_all("Converting to fp16 params")
         from jukebox.transformer.ops import _convert_conv_weights_to_fp16
