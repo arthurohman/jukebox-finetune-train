@@ -64,8 +64,8 @@ def restore_model(hps, model, checkpoint_path):
                 print(k, "Checkpoint:", checkpoint_hps.get(k, None), "Ours:", hps.get(k, None))
         checkpoint['model'] = {k[7:] if k[:7] == 'module.' else k: v for k, v in checkpoint['model'].items()}
         #print(checkpoint['model'])
-        print(checkpoint["model"].x_emb.weight.shape)
-        print(checkpoint["model"].x_out.weight.shape)
+        print(checkpoint["model"].keys())
+        print(checkpoint["model"].keys())
         model.load_state_dict(checkpoint['model'])
         if 'step' in checkpoint: model.step = checkpoint['step']
 
