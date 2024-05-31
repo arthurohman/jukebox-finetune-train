@@ -578,5 +578,5 @@ my_retrained_prior = Hyperparams(restore_prior='/content/drive/MyDrive/PLUGG/DT2
     alignment_layer=47,
     alignment_head=0,)
 
-my_retrained_prior.update(small_single_enc_dec_prior)
+#my_retrained_prior.update(small_single_enc_dec_prior)
 HPARAMS_REGISTRY["my_retrained_prior"] = my_retrained_prior
