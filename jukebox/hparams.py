@@ -569,7 +569,7 @@ DEFAULTS["distributed"] = Hyperparams(
     bucket=128
 )
 
-my_retrained_prior = Hyperparams(restore_prior='/content/drive/MyDrive/PLUGG/DT2119 Speaker Recognition/Project Jukebox/Saved Models/checkpoint_latest_10001.pth.tar',
+my_retrained_prior = Hyperparams(restore_prior='/content/drive/MyDrive/PLUGG/DT2119 Speaker Recognition/Project Jukebox/Saved Models/FINAL_CHECKPOINT.tar',
     level=2,
     labels=True,
     # TODO For the two lines below, if `--labels` was used and the model is
