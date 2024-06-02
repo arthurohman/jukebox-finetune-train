@@ -307,6 +307,7 @@ def run(hps="teeny", port=29500, **kwargs):
     data_processor = DataProcessor(hps)
 
     # Setup models
+    print("HPS: ", hps)
     vqvae = make_vqvae(hps, device)
     print_once(f"Parameters VQVAE:{count_parameters(vqvae)}")
     if hps.prior:
